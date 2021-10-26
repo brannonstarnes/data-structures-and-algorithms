@@ -84,7 +84,9 @@ Return the modified array.
 const addValues = (arr, value) => arr.push(value);
 
 const addNumbers = (num, arr, times, callback) => {
-  num.forEach(number => arr.push(number))
+  while(arr.length < times) {
+    callback(arr, num);
+  } return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,7 +108,7 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
- // Code goes here...
+  // Code goes here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -162,7 +164,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
