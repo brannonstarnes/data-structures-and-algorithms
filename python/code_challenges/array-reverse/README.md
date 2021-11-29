@@ -8,6 +8,8 @@ Create a function that takes in a given list and returns an list with the same v
 
 <!-- Embedded whiteboard image -->
 
+![array whiteboard](./images/array-reverse.png)
+
 ## Approach & Efficiency
 
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
