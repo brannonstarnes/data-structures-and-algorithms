@@ -24,4 +24,4 @@ To run your tests
 
 ## Table of Contents
 
--[Challenge 1 README](./python/code-challenges/array-reverse/README.md)
+-[Challenge 1 README](./python/code_challenges/array-reverse/README.md)
