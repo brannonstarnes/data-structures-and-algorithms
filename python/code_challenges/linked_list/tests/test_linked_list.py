@@ -107,6 +107,9 @@ def test_insert_after(my_list):
     my_list.insert_after("ball", "hat")
     assert str(my_list) == "{ glove } -> { ball } -> { hat } -> { bat } -> NULL"
 
+def test_kth_from_end_returns_value(my_num_list):
+    assert my_num_list.kth_from_end(1) == 10
+
 
 @pytest.fixture()
 def my_list():
@@ -114,4 +117,12 @@ def my_list():
     lst.insert("bat")
     lst.insert("ball")
     lst.insert("glove")
+    return lst
+
+@pytest.fixture()
+def my_num_list():
+    lst = LinkedList()
+    lst.insert(5)
+    lst.insert(10)
+    lst.insert(15)
     return lst

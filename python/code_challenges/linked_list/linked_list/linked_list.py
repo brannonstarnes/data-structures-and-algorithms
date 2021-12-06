@@ -114,3 +114,22 @@ class LinkedList():
 
         return lst_string
 
+    def kth_from_end(self, k):
+        length_count = 0
+        # search_count = length_count
+        current_node = self.head
+        while current_node:
+            if current_node.next is None:
+                current_node = self.head
+                break
+            if current_node.next != None:
+                current_node = current_node.next
+                length_count += 1
+        while length_count >= 0:
+            if length_count - k == 0:
+                return current_node.value
+            if length_count - k != 0:
+                current_node = current_node.next
+                length_count -= 1
+
+

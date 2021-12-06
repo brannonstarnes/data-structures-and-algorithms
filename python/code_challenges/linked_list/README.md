@@ -47,15 +47,31 @@ Create .append, .insert_after, and .insert_before methods on the LinkedList clas
 
 ## Whiteboard Process
 
-![whiteboard image](../images/linked_list_insertions.png)
+-   Linked List Insertions
+    ![whiteboard image](../images/linked_list_insertions.png)
+
+-   Kth from End
+    ![whiteboard image](../images/kth_from_end.png)
 
 ## Approach & Efficiency
+
+### Linked List Insertions
 
 Single while loops, nested with if/else statements used to iterate through the linked list while searching for matches.
 
 BigO Time: O(n)
 BigO Space: O(n)
 
+### Kth From End
+
+Utilized a 'length counter' to count each node until the tail of the linked list was reached. Once length was known, looked for node position where length - k == 0. Node value at that position is returned.
+
+BigO Time: O(n)
+BigO Space: O(n)
+
 ## Solution
 
-<!-- Show how to run your code, and examples of it in action -->
+See images above and follow link to PR.
+
+[Linked List Insertions]
+[Kth from End]
