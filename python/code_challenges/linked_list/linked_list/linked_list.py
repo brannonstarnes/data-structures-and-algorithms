@@ -125,6 +125,8 @@ class LinkedList():
             if current_node.next != None:
                 current_node = current_node.next
                 length_count += 1
+                if k > length_count:
+                    raise ValueError("Value is greater than list length.")
         while length_count >= 0:
             if length_count - k == 0:
                 return current_node.value

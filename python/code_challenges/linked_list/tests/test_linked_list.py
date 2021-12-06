@@ -110,6 +110,10 @@ def test_insert_after(my_list):
 def test_kth_from_end_returns_value(my_num_list):
     assert my_num_list.kth_from_end(1) == 10
 
+def test_kth_if_out_of_range(my_num_list):
+    with pytest.raises(ValueError):
+        my_num_list.kth_from_end(5)
+
 
 @pytest.fixture()
 def my_list():
