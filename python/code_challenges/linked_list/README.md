@@ -73,5 +73,5 @@ BigO Space: O(n)
 
 See images above and follow link to PR.
 
-[Linked List Insertions]
-[Kth from End]
+[Linked List Insertions](https://github.com/brannonstarnes/data-structures-and-algorithms/pull/23)
+[Kth from End](https://github.com/brannonstarnes/data-structures-and-algorithms/pull/24)
