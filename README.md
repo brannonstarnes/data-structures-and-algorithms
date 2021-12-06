@@ -24,6 +24,8 @@ To run your tests
 
 ## Table of Contents
 
-- [Challenge 1 README](./python/code-challenges/array-reverse/README.md) 
+- [Challenge 1 README](./python/code-challenges/array-reverse/README.md)
 - [Challenge 2 README](./python/code-challenges/array-insert-shift/README.md)
+- [Challenge 3 README](./python/code-challenges/array-binary-search/README.md)
+- [Challenge 4 README](./python/code-challenges/linked-list/README.md)
 
