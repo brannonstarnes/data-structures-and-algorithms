@@ -34,6 +34,51 @@ class LinkedList():
 
 
 
+    def insert_before(self, value, new_value):
+        """
+        .insert_before(value, new_value) -> value is the node in the linked list you will insert the 'new_value' before. 'new_value' is the node value being inserted."""
+
+        current_node = self.head
+        while current_node:
+            if current_node.next.value == value:
+                current_node.next = Node(new_value, current_node.next)
+                break
+            else:
+                current_node = current_node.next
+
+
+
+    def insert_after(self, value, new_value):
+        """
+        .insert_after(value, new_value) -> value is the node in the linked list you will insert the 'new_value' after. 'new_value' is the node value being inserted."""
+
+        current_node = self.head
+        while current_node:
+            if current_node.value == value:
+                temp = current_node.next
+                current_node.next = Node(new_value, temp)
+                break
+            else:
+                current_node = current_node.next
+
+
+
+
+# Challenge 06 DONE
+    def append(self, value):
+
+        if self.head == None:
+            self.head = Node(value)
+            return
+        current_node = self.head
+        while current_node:
+            if current_node.next == None:
+                current_node.next = Node(value)
+                break
+            else:
+                current_node = current_node.next
+
+
 # DONE includes
 # Arguments: value
 # Returns: Boolean
@@ -43,12 +88,12 @@ class LinkedList():
         if self.head == None:
             raise TypeError("Linked List is currently empty.")
 
-        current_Node = self.head
-        while current_Node:
-            if current_Node.value == value:
+        current_node = self.head
+        while current_node:
+            if current_node.value == value:
                 return True
             else:
-                current_Node = current_Node.next
+                current_node = current_node.next
 
         return False
 
@@ -59,12 +104,12 @@ class LinkedList():
 # "{ a } -> { b } -> { c } -> NULL"
     def __str__(self):
 
-        current_Node = self.head
+        current_node = self.head
         lst_string = ""
 
-        while current_Node:
-            lst_string += "{ " + current_Node.value + " } -> "
-            current_Node = current_Node.next
+        while current_node:
+            lst_string += "{ " + current_node.value + " } -> "
+            current_node = current_node.next
         lst_string += "NULL"
 
         return lst_string

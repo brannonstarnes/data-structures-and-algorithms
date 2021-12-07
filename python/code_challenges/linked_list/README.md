@@ -38,3 +38,24 @@ The approach was to keep the class properties, and tests clearly written and eas
 -   .includes - takes a value, searches each node in the linked list for the value, returns a Boolean.
 
 -   .\_\_str\_\_ - takes in a linked list instance, returns all nodes as a string in the form: " {a} -> {b} -> {c} -> NULL"
+
+# Challenge 06
+
+# Challenge Summary
+
+Create .append, .insert_after, and .insert_before methods on the LinkedList class. Write tests to verify the functionality of these methods.
+
+## Whiteboard Process
+
+![whiteboard image](../images/linked_list_insertions.png)
+
+## Approach & Efficiency
+
+Single while loops, nested with if/else statements used to iterate through the linked list while searching for matches.
+
+BigO Time: O(n)
+BigO Space: O(n)
+
+## Solution
+
+<!-- Show how to run your code, and examples of it in action -->

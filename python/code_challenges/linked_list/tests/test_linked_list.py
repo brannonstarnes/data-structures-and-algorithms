@@ -3,10 +3,8 @@ import linked_list
 from linked_list.linked_list import LinkedList, Node
 import pytest
 
-
 def test_version():
     assert __version__ == '0.1.0'
-
 
 def test_node_value_error():
     with pytest.raises(Exception):
@@ -22,11 +20,9 @@ def test_node_next():
     node = Node('ball', 'bat')
     assert node.next == 'bat'
 
-
 def test_node_default_next():
     node = Node('ball')
     assert node.next == None
-
 
 def test_import_LinkedList():
     assert LinkedList
@@ -48,6 +44,7 @@ def test_insert_node():
     assert lst.head.value == "ball"
 
 # source: https://docs.pytest.org/en/6.2.x/assert.html
+
 def test_insert_nothing_error():
     with pytest.raises(Exception):
         lst = LinkedList()
@@ -64,12 +61,8 @@ def test_includes_return_False():
 # Can properly insert multiple nodes into the linked list
 # Will return true when finding a value within the linked list that exists
 
-def test_includes_return_True():
-    lst = LinkedList()
-    lst.insert("bat")
-    lst.insert("ball")
-    lst.insert("glove")
-    assert lst.includes("ball") == True
+def test_includes_return_True(my_list):
+    assert my_list.includes("ball") == True
 
 
 # source: https://docs.pytest.org/en/6.2.x/assert.html
@@ -83,15 +76,42 @@ def test_includes_error_empty_list():
 
 # Can properly return a collection of all the values that exist in the linked list
 
-def test_to_string():
+def test_to_string(my_list):
+    assert str(my_list) == "{ glove } -> { ball } -> { bat } -> NULL"
+
+
+def test_append(my_list):
+    my_list.append("hat")
+    assert str(my_list) == "{ glove } -> { ball } -> { bat } -> { hat } -> NULL"
+
+
+def test_append_empty_list():
+    lst = LinkedList()
+    lst.append("bat")
+    assert str(lst) == "{ bat } -> NULL"
+
+def test_append_empty_list():
+    lst = LinkedList()
+    lst.insert("bat")
+    lst.append("ball")
+    lst.append("glove")
+    assert str(lst) == "{ bat } -> { ball } -> { glove } -> NULL"
+
+
+def test_insert_before(my_list):
+    my_list.insert_before("ball", "hat")
+    assert str(my_list) == "{ glove } -> { hat } -> { ball } -> { bat } -> NULL"
+
+
+def test_insert_after(my_list):
+    my_list.insert_after("ball", "hat")
+    assert str(my_list) == "{ glove } -> { ball } -> { hat } -> { bat } -> NULL"
+
+
+@pytest.fixture()
+def my_list():
     lst = LinkedList()
     lst.insert("bat")
     lst.insert("ball")
     lst.insert("glove")
-    assert str(lst) == "{ glove } -> { ball } -> { bat } -> NULL"
-
-
-
-
-
-
+    return lst
