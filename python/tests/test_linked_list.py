@@ -1,5 +1,3 @@
-from linked_list import __version__
-import linked_list
 from linked_list.linked_list import LinkedList, Node
 import pytest
 
