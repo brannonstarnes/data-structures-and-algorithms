@@ -1,8 +1,6 @@
 from linked_list.linked_list import LinkedList, Node
 import pytest
 
-def test_version():
-    assert __version__ == '0.1.0'
 
 def test_node_value_error():
     with pytest.raises(Exception):

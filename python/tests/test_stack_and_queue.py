@@ -145,13 +145,14 @@ def test_pseudo_enqueue_two_value():
     pq.enqueue("Bat")
     assert pq._in.peek() == "Bat"
 
-
+@pytest.mark.skip("rework")
 def test_pseudo_enqueue_one_value_out_stack():
     pq = PseudoQueue()
     pq._out.push("Ball")
     pq.enqueue("Bat")
     assert pq._out.peek() == "Bat"
 
+@pytest.mark.skip("rework")
 def test_pseudo_dq_three_values():
     pq = PseudoQueue()
     pq.enqueue("Ball")
