@@ -1,5 +1,5 @@
 from stack_and_queue import __version__
-from stack_and_queue.stack_and_queue import Stack, Queue
+from stack_and_queue.stack_and_queue import PseudoQueue, Stack, Queue
 import pytest
 
 def test_version():
@@ -103,14 +103,15 @@ def test_dequeue_one_value():
     q.dequeue()
     assert q.front is None and q.back is None
 
-@pytest.mark.skip("still needs work")
+@pytest.mark.skip("not yet")
 def test_dequeue_three_values():
     q = Queue()
     q.enqueue("Ball")
     q.enqueue("Bat")
     q.enqueue("Glove")
     q.dequeue()
-    assert q.front == "Bat" and q.back == "Glove"
+    assert q.peek() == "Bat" and q.back == "Glove"
+
 
 def test_peek_one_value():
     q = Queue()
@@ -132,3 +133,28 @@ def test_queue_is_empty_false():
     q.enqueue("Ball")
     assert q.is_empty() == False
 
+def test_pseudo_enqueue_one_value():
+    pq = PseudoQueue()
+    pq.enqueue("Ball")
+    assert pq._in.peek() == "Ball"
+
+
+def test_pseudo_enqueue_two_value():
+    pq = PseudoQueue()
+    pq.enqueue("Ball")
+    pq.enqueue("Bat")
+    assert pq._in.peek() == "Bat"
+
+
+def test_pseudo_enqueue_one_value_out_stack():
+    pq = PseudoQueue()
+    pq._out.push("Ball")
+    pq.enqueue("Bat")
+    assert pq._out.peek() == "Bat"
+
+def test_pseudo_dq_three_values():
+    pq = PseudoQueue()
+    pq.enqueue("Ball")
+    pq.enqueue("Bat")
+    pq.enqueue("Glove")
+    assert pq.dequeue() == "Bat" and pq._in.peek() == "Ball"

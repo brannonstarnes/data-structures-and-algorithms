@@ -1,10 +1,14 @@
 # Stacks and Queues
 
-Stacks and Queues represent an evolution of Linked Lists. Their nodes may be added, removed, or otherwise accessed differently from that of a traditional linked list. Stacks can be thought of as stacks of pancakes, where only the top node can be accessed. Queues have a "front of the line" and a "back of the line". The front may be removed, but all new nodes are added to the back of the line.
+Stacks and Queues represent an evolutionkj of Linked Lists. Their nodes may be added, removed, or otherwise accessed differently from that of a traditional linked list. Stacks can be thought of as stacks of pancakes, where only the top node can be accessed. Queues have a "front of the line" and a "back of the line". The front may be removed, but all new nodes are added to the back of the line.
+
+# PseudoQueues
+
+Pseudoqueues are a combination of a Queue and 2 stacks in that the Queue is being managed by two stacks. The stack methods, then, are being called to influence the Queue.
 
 ## Challenge
 
-Create classes for Stack and Queue structures to store nodes and write methods:
+Create classes for Stack, Queue, and PseudoQueue structures to store nodes and write methods:
 
 ## Approach & Efficiency
 
