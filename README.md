@@ -29,4 +29,5 @@ To run your tests
 - [Binary Search](./python/code-challenges/array-binary-search/README.md)
 - [Linked Lists](./python/code-challenges/linked-list/README.md)
 - [Linked List Insertions](./python/code-challenges/linked-list/README.md)
-- [Linke List Zip]./python/code-challenges/linked-list-zip/README.md)
+- [Linked List Zip](./python/code-challenges/linked-list-zip/README.md)
+- [Animal Shelter](./python/animal_shelter/README.md)
