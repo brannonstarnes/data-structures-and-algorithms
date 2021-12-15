@@ -49,8 +49,8 @@ class Queue:
             self.back = Node(value)
         elif not self.front is None:
             temp = self.back
-            temp.next = value
-            self.back = Node(value)
+            temp.next = Node(value)
+            self.back = temp.next
 
     def dequeue(self):
         if self.front is None:
@@ -61,11 +61,11 @@ class Queue:
             self.back = None
             return temp
         if self.front.next:
-            print("self.front: ", self.front)
-            print("self.front.next: ", self.front.next)
+            # print("self.front: ", self.front)
+            # print("self.front.next: ", self.front.next)
             temp = self.front.value
             self.front = self.front.next
-            print("new self.front: ", self.front)
+            # print("new self.front: ", self.front)
             return temp
 
 
@@ -77,3 +77,38 @@ class Queue:
             return True
         else:
             return False
+
+
+class PseudoQueue:
+    def __init__(self, _in = None, _out = None):
+        self._in = Stack(_in)
+        self._out = Stack(_out)
+
+    def enqueue(self, value):
+        if self._in.peek() is None and self._out.peek() is None:
+            self._in.push(value)
+
+        elif self._out.peek():
+            text = ""
+            while self._out.peek():
+                if self._out.peek():
+                    text += f"[{self._out.peek()}]->"
+                    self._in.push(self._out.pop())
+            self._in.push(value)
+            text += f"[{value}]->None"
+            print(text)
+            return text
+        elif not self._out.peek() and self._in.peek():
+            self._in.push(value)
+
+    def dequeue(self):
+        if not self._in.peek() and not self._out.peek():
+            raise TypeError("Nothing to dequeue!")
+        elif self._in.peek():
+            while self._in.peek():
+                self._out.push(self._in.pop())
+            return self._out.pop()
+
+        elif self._out.peek():
+            return self._out.pop()
+
