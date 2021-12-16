@@ -12,4 +12,4 @@ I implemented a Stack to organize the individual characters, since a Last In Fir
 
 ## Solution
 
-Please see the image above and view the code [here]().
+Please see the image above and view the code [here](https://github.com/brannonstarnes/data-structures-and-algorithms/blob/main/python/stack_queue_brackets/stack_queue_brackets.py).
