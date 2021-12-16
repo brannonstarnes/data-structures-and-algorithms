@@ -31,3 +31,4 @@ To run your tests
 - [Linked List Insertions](./python/code-challenges/linked-list/README.md)
 - [Linked List Zip](./python/code-challenges/linked-list-zip/README.md)
 - [Animal Shelter](./python/animal_shelter/README.md)
+- [Bracket Validation](./python/stack_queue_brackets/README.md)
