@@ -29,6 +29,23 @@ class BinarySearchTree(BinaryTree):
             return False
 
 
+
+        # def walk(root):
+        #   if value < root.value:
+        #       if root.left is None:
+        #           root.left = new_node
+        #           return
+        #       walk(root.left)
+        #   if new_node.value > root.value:
+        #       if root.right is None:
+        #           root.right = new_node
+        #           return
+        #       walk(root.right)
+        # walk(self.root)
+
+
+
+
 # Create a Binary Search Tree class
 # This class should be a sub-class (or your languages equivalent) of the Binary Tree Class, with the following additional methods:
 # Add
