@@ -1,4 +1,4 @@
-from animal_shelter.stack_queue_animal_shelter import Node, Stack, Animal_Shelter
+from animal_shelter.stack_queue_animal_shelter import Animal_Shelter
 
 import pytest
 

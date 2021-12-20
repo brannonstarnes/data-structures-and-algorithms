@@ -1,4 +1,3 @@
-from   import deque
 acceptable_animals = ['dog', 'cat']
 
 class Dog():
@@ -15,7 +14,7 @@ class Animal_Shelter:
 
     def enqueue(self, animal):
         if isinstance(self, animal):
-            self._cats.enqueue(animal) 
+            self._cats.enqueue(animal)
         else:
             self._dogs.enqueue(animal)
 
