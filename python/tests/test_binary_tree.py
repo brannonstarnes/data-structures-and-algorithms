@@ -55,6 +55,12 @@ def test_contains_value_true(bal_tree):
 def test_contains_value_false(bal_tree):
     assert bal_tree.contains(50) == False
 
+def test_max_root_two_children(bin_tree):
+    assert bin_tree.find_max() == 10
+
+
+
+
 @pytest.fixture
 def bal_tree():
     tree = BinarySearchTree()
@@ -75,4 +81,12 @@ def unbal_tree():
     tree.add(2)
     tree.add(7)
     tree.add(15)
+    return tree
+
+@pytest.fixture
+def bin_tree():
+    tree = BinaryTree()
+    tree.root = Node(5)
+    tree.root.left = Node(6)
+    tree.root.right = Node(10)
     return tree

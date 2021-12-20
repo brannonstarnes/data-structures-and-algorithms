@@ -27,3 +27,5 @@ Each method below returns a list of Nodes following the an ordered search patter
 -   .pre_order() - root >> left-child >> right-child
 -   .in_order() - left-child >> root >> right-child
 -   .post_order() - left-child >> right_child >> root
+
+-   .find_max() - takes in a given value, searches the binary tree and returns the maximum value.
