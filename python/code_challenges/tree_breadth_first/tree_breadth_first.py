@@ -1,13 +1,4 @@
-# use a queue
 from stack_and_queue.stack_and_queue import Queue
-
-
-
-# enqueue the left and right of the dequeued
-# dequeue B (the root's left) and enqueue its left and right
-# dequeue C (the root's right) and enqueue its left and right
-# repeat until reach bottom and queue is empty
-
 
 def breadth_first(tree):
     q = Queue()
