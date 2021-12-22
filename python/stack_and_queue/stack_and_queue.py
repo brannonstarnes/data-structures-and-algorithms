@@ -46,27 +46,24 @@ class Queue:
     def enqueue(self, value):
         if self.front is None:
             self.front = Node(value)
-            self.back = Node(value)
-        elif not self.front is None:
+            self.back = self.front
+        elif self.front:
             temp = self.back
             temp.next = Node(value)
             self.back = temp.next
 
     def dequeue(self):
-        if self.front is None:
+        if self.is_empty():
             raise TypeError("Nothing to dequeue!")
         if self.front.next is None:
             temp = self.front.value
             self.front = None
             self.back = None
             return temp
-        if self.front.next:
-            # print("self.front: ", self.front)
-            # print("self.front.next: ", self.front.next)
-            temp = self.front.value
+        elif self.front.next:
+            temp = self.front
             self.front = self.front.next
-            # print("new self.front: ", self.front)
-            return temp
+            return temp.value
 
 
     def peek(self):

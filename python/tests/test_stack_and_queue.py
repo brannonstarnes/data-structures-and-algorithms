@@ -103,14 +103,14 @@ def test_dequeue_one_value():
     q.dequeue()
     assert q.front is None and q.back is None
 
-@pytest.mark.skip("not yet")
+
 def test_dequeue_three_values():
     q = Queue()
     q.enqueue("Ball")
     q.enqueue("Bat")
     q.enqueue("Glove")
     q.dequeue()
-    assert q.peek() == "Bat" and q.back == "Glove"
+    assert q.peek() == "Bat"
 
 
 def test_peek_one_value():
