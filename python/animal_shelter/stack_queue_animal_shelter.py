@@ -1,5 +1,3 @@
-acceptable_animals = ['dog', 'cat']
-
 class Dog:
     def __init__(self, name, next= None):
         self.name = name
