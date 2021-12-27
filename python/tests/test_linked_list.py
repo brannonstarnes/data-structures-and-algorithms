@@ -5,7 +5,7 @@ import pytest
 def test_node_value_error():
     with pytest.raises(Exception):
         node = Node()
-        node.__init__
+      
 
 def test_node_value_created():
     node = Node('ball')
@@ -23,7 +23,7 @@ def test_node_default_next():
 def test_import_LinkedList():
     assert LinkedList
 
-# Can successfully instantiate an empty linked list
+# DONE Can successfully instantiate an empty linked list
 
 def test_init_empty_linked_list():
     lst = LinkedList()
@@ -31,7 +31,7 @@ def test_init_empty_linked_list():
     expected = None
     assert actual == expected
 
-# Can properly insert into the linked list
+# DONE Can properly insert into the linked list
 # The head property will properly point to the first node in the linked list
 
 def test_insert_node():
@@ -46,7 +46,7 @@ def test_insert_nothing_error():
         lst = LinkedList()
         lst.insert()
 
-# Will return false when searching for a value in the linked list that does not exist
+# DONE Will return false when searching for a value in the linked list that does not exist
 
 def test_includes_return_False():
     lst = LinkedList()
@@ -54,7 +54,9 @@ def test_includes_return_False():
     lst.insert("bat")
     assert lst.includes("glove") == False
 
-# Can properly insert multiple nodes into the linked list
+
+
+
 # Will return true when finding a value within the linked list that exists
 
 def test_includes_return_True(my_list):
@@ -70,8 +72,8 @@ def test_includes_error_empty_list():
 
 
 
-# Can properly return a collection of all the values that exist in the linked list
-
+# DONE Can properly return a collection of all the values that exist in the linked list
+# DONE Can properly insert multiple nodes into the linked list
 def test_to_string(my_list):
     assert str(my_list) == "{ glove } -> { ball } -> { bat } -> NULL"
 

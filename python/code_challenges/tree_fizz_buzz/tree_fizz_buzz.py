@@ -2,9 +2,9 @@ from _pytest import nodes
 from stack_and_queue.stack_and_queue import Queue
 
 class K_Node:
-    def __init__(self,value):
+    def __init__(self,value, children = None):
         self.value = value
-        self.children = []
+        self.children = children or []
 
 class K_tree:
     def __init__(self, root = None, k = 0):
