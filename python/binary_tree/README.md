@@ -4,6 +4,10 @@
 
 Binary and K-ary trees are Node-centric data structures that have a root a a possible number of children (k).
 
+## Whiteboard
+
+[whiteboard](./tree_max.png)
+
 ## Challenge
 
 <!-- Description of the challenge -->
