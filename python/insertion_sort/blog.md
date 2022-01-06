@@ -22,7 +22,7 @@ Let's take a look at the pseudocode for the Insertion Algorithm, then go through
 
 `
 
-As we can see above, the function takes in a list of integers to sort, the a **_for_** loop is initialized with a counter **_i_**(which designates our current count in the length of the list) set to 1 and **_j_** (which determines which indexes are being compared) is always initialized one index space behind i (or i-1).
+As we can see above, the function takes in a list of integers to sort, the  **_for_** loop is initialized with a counter **_i_** (which designates our current count in the length of the list) set to 1 and **_j_** (which determines which indexes are being compared) is always initialized one index space behind i (or i-1).
 
 ![diagram 1](<./insertion_sort(1).png>)
 
