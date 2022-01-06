@@ -53,9 +53,9 @@ Again, j is decremented and compared to temp.
 The 23 is reassigned to the the 'empty' index.
 
 ![diagram 8](<./insertion_sort(8).png>)
-
+edit: j should equal 2
 ![diagram 9](<./insertion_sort(9).png>)
-
+edit: j should equal 2
 j is decremented and compared to temp. Since temp is NOT less than 8, the while loop is exited.
 
 ![diagram 10](<./insertion_sort(10).png>)
