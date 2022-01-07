@@ -18,14 +18,14 @@ def merge(left, right, arr):
     k = 0
 
     while i < left.length and j < right.length:
-         if left[i] <= right[j]:
-             arr[k] = left[i]
-             i = i + 1
-         else:
-             arr[k] = right[j]
-             j = j + 1
+        if left[i] <= right[j]:
+            arr[k] = left[i]
+            i = i + 1
+        else:
+            arr[k] = right[j]
+            j = j + 1
 
-         k = k + 1
+        k = k + 1
 
     if i == left.length:
         set remaining entries in arr to remaining values in right
