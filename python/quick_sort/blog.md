@@ -45,4 +45,16 @@ ALGORITHM Swap(arr, i, low)
     arr[low] <-- temp
 ```
 
-Phew, it looks like there's a lot going on here! Fear not, we'll take it one bite at a time.
+Phew, it looks like there's a lot going on here! Fear not, we'll take it one bite at a time. The first function defined, called QuickSort, defines the boundaries of left and right based on where the pivot will be. It takes in an array, or list, as well as left and right (think start and end of list).
+
+Partition takes all the same arguments and sets the pivot as the last element of the list, or the RIGHTmost. In order to track what index is currently the end of the low side, low is set to left -1 and will be incremented every time an element is moved to the left. That being accomplished, we can now compare all items in the list to our pivot. Anything that is lower than the pivot is taken from its current position and placed on the left side (think left[0]), swapping places with whatever element happened to be in that 0th index position. If the item being compared is NOT lower than the pivot, it is ignored (not moved to left).
+
+Lastly, Swap is a basic variable swapping function that allows a variably to be redefined without losing any data.
+
+This will continue until all elements of the list have had an opportunity to be compared and placed into the correct position.
+
+Now, let's get visual!
+
+![sorted final](./quick_sort.png)
+
+As you can see in the diagram, the pivot is selected and its value is compared again the rest of the list. Anything larger moves to the right of the pivot, less to the left. Once each round of comparisons is completed the index position of the pivot is 'locked in'. Once everything is locked in and there's nothing else to compare to, you're sorted!

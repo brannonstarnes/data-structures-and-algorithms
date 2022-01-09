@@ -27,7 +27,7 @@ def merge(left, right, arr):
 
         k = k + 1
 
-    if i == left.length:
-        set remaining entries in arr to remaining values in right
-    else:
-        set remaining entries in arr to remaining values in left
+    # if i == left.length:
+    #     set remaining entries in arr to remaining values in right
+    # else:
+    #     set remaining entries in arr to remaining values in left
