@@ -12,10 +12,10 @@ def Partition(arr, left, right):
     pivot = arr[right]
     # create a variable to track the largest index of numbers lower than the defined pivot
     low = left - 1
-    for i in left to right):
-        if arr[i] <= pivot:
-            low = low + 1
-            Swap(arr, i, low)
+    # for i in left to right):
+    #     if arr[i] <= pivot:
+    #         low = low + 1
+    #         Swap(arr, i, low)
 
      # place the value of the pivot location in the middle.
      # all numbers smaller than the pivot are on the left, larger on the right.
