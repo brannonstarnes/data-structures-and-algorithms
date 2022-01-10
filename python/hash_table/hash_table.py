@@ -15,7 +15,13 @@ class HashTable():
         return value
 
     def contains(self, key):
-        pass
+        comparator_bucket = self.hash(key)
+        drop = (self.buckets[comparator_bucket])
+        if drop != None and key in drop :
+            print("True")
+            return True
+        print("False")
+        return False
 
     def hash(self, key):
         # add together ascii values of each char
@@ -33,4 +39,5 @@ my_hash = HashTable()
 my_hash.hash('spam')
 my_hash.add('spam', 'eggs')
 my_hash.get('spam')
-
+my_hash.contains('spam')
+my_hash.contains('foo')
