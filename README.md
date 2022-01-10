@@ -34,3 +34,5 @@ To run your tests
 - [Bracket Validation](./python/stack_queue_brackets/README.md)
 - [Trees](./python/binary_tree/README.md)
 - [Tree_Breadth_First](./python/code_challenges/tree_breadth_first/README.md)
+- [K-ary Fizz Buzz](./python/tree_fizz_buzz/README.md)
+
