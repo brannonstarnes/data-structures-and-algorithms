@@ -6,13 +6,14 @@ class HashTable():
 
     def add(self, key, value):
         bucket_location = self.hash(key)
-        drop = self.buckets[bucket_location]
-        if drop == None:
-            bucket_list = LinkedList()
-            bucket_list.head = Node({key: value})
-            drop = bucket_list.head
-        else:
-            drop.next = Node({key:value})
+        bucket = self.buckets[bucket_location]
+        if bucket == None:
+            bucket = LinkedList()
+            self.buckets[bucket_location] = bucket
+        bucket.append((key,value))
+
+        # else:
+        #     bucket.next = Node({key:value})
 
     def get(self, key):
         bucket_location = self.hash(key)
@@ -21,8 +22,8 @@ class HashTable():
 
     def contains(self, key):
         comparator_bucket = self.hash(key)
-        drop = (self.buckets[comparator_bucket])
-        if drop != None and drop.includes(key) :
+        bucket = (self.buckets[comparator_bucket])
+        if bucket != None and bucket.includes(key) :
             print("True")
             return True
         print("False")
@@ -37,7 +38,19 @@ class HashTable():
             # multiply by a prime number
         primed = ascii_total * 599
         # modulus by the size
-        result = primed % 1024
+        result = primed % len(self.buckets)
         return result
 
 
+ht = HashTable()
+
+assert ht
+assert ht.buckets
+assert ht.hash('cat') == ht.hash('act')
+assert ht.hash("car") != ht.hash('cat')
+
+cat_hash = ht.hash("cat")
+ht.add('cat', 'Cleo')
+assert ht.buckets(cat_hash).head.value == ('cat','Cleo')
+
+print("tests pass")
