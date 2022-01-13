@@ -7,6 +7,7 @@ class HashTable():
     def add(self, key, value):
         bucket_location = self.hash(key)
         bucket = self.buckets[bucket_location]
+
         if bucket == None:
             bucket = LinkedList()
             self.buckets[bucket_location] = bucket
@@ -17,16 +18,31 @@ class HashTable():
 
     def get(self, key):
         bucket_location = self.hash(key)
-        value = ((self.buckets[bucket_location])[key])
-        return value
+        bucket = ((self.buckets[bucket_location])[key])
+
+        if bucket:
+            node = bucket.head
+            while node:
+                node_key, node_value = node.value
+                if node_key == key:
+                    return node_value
+                node = node.next
+
+        return None
 
     def contains(self, key):
         comparator_bucket = self.hash(key)
+
         bucket = (self.buckets[comparator_bucket])
-        if bucket != None and bucket.includes(key) :
-            print("True")
-            return True
-        print("False")
+
+        if bucket:
+            node = bucket.head
+            while node:
+                node_key = node.value[0]
+                if node_key == key:
+                    return True
+                node = node.next
+
         return False
 
     def hash(self, key):
