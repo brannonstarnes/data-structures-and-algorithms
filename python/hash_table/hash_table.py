@@ -58,15 +58,15 @@ class HashTable():
         return result
 
 
-ht = HashTable()
+# ht = HashTable()
 
-assert ht
-assert ht.buckets
-assert ht.hash('cat') == ht.hash('act')
-assert ht.hash("car") != ht.hash('cat')
+# assert ht
+# assert ht.buckets
+# assert ht.hash('cat') == ht.hash('act')
+# assert ht.hash("car") != ht.hash('cat')
 
-cat_hash = ht.hash("cat")
-ht.add('cat', 'Cleo')
-assert ht.buckets(cat_hash).head.value == ('cat','Cleo')
+# cat_hash = ht.hash("cat")
+# ht.add('cat', 'Cleo')
+# assert ht.buckets(cat_hash).head.value == ('cat','Cleo')
 
-print("tests pass")
+# print("tests pass")
