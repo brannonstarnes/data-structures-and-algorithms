@@ -43,3 +43,42 @@ def zip_lists(list_1, list_2):
 
 # zipped = zip_lists(list1, list2)
 # print(zipped.head.value, zipped.head.next.value, zipped.head.next.next.value, zipped.head.next.next.next.value, zipped.head.next.next.next.next.value, zipped.head.next.next.next.next.next.value)
+
+def merge_sort_list(list):
+    n = len(list)
+
+    if n > 1:
+        mid = n/2
+        left = list[0:mid]
+        right = list[mid:n]
+        # sort the left side
+        merge_sort(left)
+        # sort the right side
+        merge_sort(right)
+        # merge the sorted left and right sides together
+        merge(left, right, list)
+
+def merge(left, right, list):
+    i = 0
+    j = 0
+    k = 0
+
+    while i < left.length and j < right.length:
+        if left[i] <= right[j]:
+            list[k] = left[i]
+            i = i + 1
+        else:
+            list[k] = right[j]
+            j = j + 1
+
+        k = k + 1
+
+    if i == left.length:
+        set remaining entries in list to remaining values in right
+    else:
+        set remaining entries in list to remaining values in left
+
+
+def get_length(list):
+    i=0
+    return [i +=1 for ]
