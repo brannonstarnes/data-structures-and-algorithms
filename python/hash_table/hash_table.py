@@ -1,24 +1,22 @@
-from linked_list.linked_list import LinkedList,
+from linked_list.linked_list import LinkedList
 
 class HashTable():
     def __init__(self, size=1024):
         self.buckets = [None] * size
 
     def add(self, key, value):
-        bucket_location = self.hash(key)
-        bucket = self.buckets[bucket_location]
+        hash = self.hash(key)
+        bucket = self.buckets[hash]
 
         if bucket == None:
             bucket = LinkedList()
-            self.buckets[bucket_location] = bucket
+            self.buckets[hash] = bucket
         bucket.append((key,value))
 
-        # else:
-        #     bucket.next = Node({key:value})
 
     def get(self, key):
-        bucket_location = self.hash(key)
-        bucket = ((self.buckets[bucket_location])[key])
+        hash = self.hash(key)
+        bucket = ((self.buckets[hash])[key])
 
         if bucket:
             node = bucket.head
