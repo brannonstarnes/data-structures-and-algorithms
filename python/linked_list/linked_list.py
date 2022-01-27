@@ -1,12 +1,10 @@
-# DONE Create a Linked List class
-# DONE Within your Linked List class, include a head property.
-
 from typing import Type
 
 
 class Node():
     """
-    Node(value, next): Required: "value" to be set as the Node's data. Optional: "next" defaults to None, points to next node in Linked List """
+    Node(value, next): Required: "value" to be set as the Node's data. Optional: "next" defaults to None, points to next node in Linked List
+    """
 
     def __init__(self, value, next= None):
         if value == None:
@@ -15,18 +13,66 @@ class Node():
         self.next = next
 
 
-# DONE Upon instantiation, an empty Linked List should be created.
+
 class LinkedList():
-    def __init__(self):
+    """Upon instantiation, an empty Linked List should be created, unless a list of values are provided as an argument."""
+
+    def __init__(self, values=None):
+
         self.head = None
 
+        if values:
 
-# DONE insert
-# Arguments: value
-# Returns: nothing
-# Adds a new node with that value to the head of the list with an O(1) Time performance.
+            for item in reversed(values):
+                self.insert(item)
+
+
+    def __iter__(self):
+
+        def value_generator():
+            current = self.head
+            while current:
+                yield current.value
+                current = current.next
+
+        return value_generator()
+
+
+    def __len__(self):
+        # return len(list(iter(self)))
+        count = 0
+        for _ in self:
+            count += 1
+        return count
+
+
+    def __eq__(self, other):
+        return list(self) == list(other)
+
+
+    def __getitem__(self, index):
+        if index < 0:
+            raise IndexError
+
+        for i, item in enumerate(self):
+            if i == index:
+                return item
+
+        raise IndexError
+
+    def __str__(self):
+        """
+        Returns: a string representing all the values in the Linked List, formatted as: "{ a } -> { b } -> { c } -> None
+        """
+        output = ""
+
+        for value in self:
+            output += f"{{ {value} }} -> "
+
+        return output + 'None'
+
     def insert(self, value):
-
+        """Adds a new node with provided value to the head of the list with an O(1) Time performance."""
         if value == None:
             raise Exception("Nothing to insert!")
 
@@ -36,7 +82,8 @@ class LinkedList():
 
     def insert_before(self, value, new_value):
         """
-        .insert_before(value, new_value) -> value is the node in the linked list you will insert the 'new_value' before. 'new_value' is the node value being inserted."""
+        .insert_before(value, new_value) -> value is the node in the linked list you will insert the 'new_value' before. 'new_value' is the node value being inserted.
+        """
 
         current_node = self.head
         while current_node:
@@ -50,7 +97,8 @@ class LinkedList():
 
     def insert_after(self, value, new_value):
         """
-        .insert_after(value, new_value) -> value is the node in the linked list you will insert the 'new_value' after. 'new_value' is the node value being inserted."""
+        .insert_after(value, new_value) -> value is the node in the linked list you will insert the 'new_value' after. 'new_value' is the node value being inserted.
+        """
 
         current_node = self.head
         while current_node:
@@ -62,9 +110,6 @@ class LinkedList():
                 current_node = current_node.next
 
 
-
-
-# Challenge 06 DONE
     def append(self, value):
 
         if self.head == None:
@@ -79,11 +124,8 @@ class LinkedList():
                 current_node = current_node.next
 
 
-# DONE includes
-# Arguments: value
-# Returns: Boolean
-# Indicates whether that value exists as a Node’s value somewhere within the list.
     def includes(self, value):
+        """.includes(value) - Indicates whether that value exists as a Node’s value somewhere within the list."""
 
         if self.head == None:
             raise TypeError("Linked List is currently empty.")
@@ -98,19 +140,6 @@ class LinkedList():
         return False
 
 
-# DONE to string
-# Arguments: none
-# Returns: a string representing all the values in the Linked List, formatted as:
-# "{ a } -> { b } -> { c } -> NULL"
-    def __str__(self):
 
-        current_node = self.head
-        lst_string = ""
-
-        while current_node:
-            lst_string += "{ " + current_node.value + " } -> "
-            current_node = current_node.next
-        lst_string += "NULL"
-
-        return lst_string
-
+linked_nums = LinkedList(values=[1,2,3,4,5])
+print(linked_nums)
