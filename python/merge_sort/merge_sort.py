@@ -31,3 +31,5 @@ def merge(left, right, arr):
     #     set remaining entries in arr to remaining values in right
     # else:
     #     set remaining entries in arr to remaining values in left
+
+# Source: GeeksforGeeks.com
